@@ -1,0 +1,40 @@
+seed: 42
+
+data:
+  num_docs: 5200          # matches the reported 5,200-document corpus
+  num_queries: 300
+  train_query_fraction: 0.5   # first half used to synthesize training pairs, rest held out for eval
+
+tokenizer:
+  vocab_size: 6000
+  max_len: 64
+
+bi_encoder:
+  model:
+    dim: 96
+    num_layers: 3
+    num_heads: 4
+    ff_dim: 256
+    max_len: 64
+    proj_dim: 64
+  epochs: 8
+  batch_size: 32
+  lr: 3.0e-4
+
+cross_encoder:
+  model:
+    dim: 96
+    num_layers: 3
+    num_heads: 4
+    ff_dim: 256
+    max_len: 96
+  epochs: 4
+  batch_size: 16
+  lr: 2.0e-4
+  num_hard_negatives: 3
+
+hybrid_alpha: 0.5   # weight on dense score vs BM25 score in hybrid fusion
+
+output:
+  dir: checkpoints
+  results_dir: results

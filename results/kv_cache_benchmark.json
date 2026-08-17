@@ -1,0 +1,14 @@
+{
+  "no_cache": {
+    "mean_latency_s": 0.48678359998958126,
+    "p95_latency_s": 0.7747924870000134,
+    "p50_latency_s": 0.4857033069999943
+  },
+  "static_prefix_cache": {
+    "mean_latency_s": 0.05851874518752472,
+    "p95_latency_s": 0.06551400900002591,
+    "p50_latency_s": 0.058460570000079315
+  },
+  "num_samples": 96,
+  "p95_latency_reduction_pct": 91.54431540067002
+}

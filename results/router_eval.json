@@ -1,0 +1,478 @@
+{
+  "config": {
+    "seed": 7,
+    "data": {
+      "num_queries": 250,
+      "multi_intent_fraction": 0.3,
+      "train_fraction": 0.7
+    },
+    "tokenizer": {
+      "vocab_size": 2000,
+      "max_len": 48
+    },
+    "model": {
+      "dim": 64,
+      "num_layers": 2,
+      "num_heads": 4,
+      "ff_dim": 128,
+      "max_len": 48
+    },
+    "train": {
+      "epochs": 40,
+      "batch_size": 16,
+      "lr": 0.0005
+    },
+    "eval": {
+      "threshold": 0.5,
+      "judge_sample_size": 75
+    },
+    "output": {
+      "dir": "checkpoints",
+      "results_dir": "results"
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.6639520287513733
+    },
+    {
+      "epoch": 2,
+      "loss": 0.5720614731311798
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5299827218055725
+    },
+    {
+      "epoch": 4,
+      "loss": 0.5143815040588379
+    },
+    {
+      "epoch": 5,
+      "loss": 0.49488728046417235
+    },
+    {
+      "epoch": 6,
+      "loss": 0.46617347598075864
+    },
+    {
+      "epoch": 7,
+      "loss": 0.4292397052049637
+    },
+    {
+      "epoch": 8,
+      "loss": 0.3836193859577179
+    },
+    {
+      "epoch": 9,
+      "loss": 0.3332370698451996
+    },
+    {
+      "epoch": 10,
+      "loss": 0.30451815128326415
+    },
+    {
+      "epoch": 11,
+      "loss": 0.2690787807106972
+    },
+    {
+      "epoch": 12,
+      "loss": 0.2291975885629654
+    },
+    {
+      "epoch": 13,
+      "loss": 0.1989801049232483
+    },
+    {
+      "epoch": 14,
+      "loss": 0.17274160236120223
+    },
+    {
+      "epoch": 15,
+      "loss": 0.1457187183201313
+    },
+    {
+      "epoch": 16,
+      "loss": 0.12061827033758163
+    },
+    {
+      "epoch": 17,
+      "loss": 0.10334848016500472
+    },
+    {
+      "epoch": 18,
+      "loss": 0.08014299795031547
+    },
+    {
+      "epoch": 19,
+      "loss": 0.06548593863844872
+    },
+    {
+      "epoch": 20,
+      "loss": 0.053175294771790504
+    },
+    {
+      "epoch": 21,
+      "loss": 0.04812602363526821
+    },
+    {
+      "epoch": 22,
+      "loss": 0.04143184684216976
+    },
+    {
+      "epoch": 23,
+      "loss": 0.032911648787558076
+    },
+    {
+      "epoch": 24,
+      "loss": 0.03065820410847664
+    },
+    {
+      "epoch": 25,
+      "loss": 0.026211844757199287
+    },
+    {
+      "epoch": 26,
+      "loss": 0.023647088184952737
+    },
+    {
+      "epoch": 27,
+      "loss": 0.022114677261561154
+    },
+    {
+      "epoch": 28,
+      "loss": 0.020229274593293666
+    },
+    {
+      "epoch": 29,
+      "loss": 0.017394256219267844
+    },
+    {
+      "epoch": 30,
+      "loss": 0.015518067963421344
+    },
+    {
+      "epoch": 31,
+      "loss": 0.014202600158751012
+    },
+    {
+      "epoch": 32,
+      "loss": 0.013806716818362475
+    },
+    {
+      "epoch": 33,
+      "loss": 0.011573915230110287
+    },
+    {
+      "epoch": 34,
+      "loss": 0.01108572743833065
+    },
+    {
+      "epoch": 35,
+      "loss": 0.010292016388848423
+    },
+    {
+      "epoch": 36,
+      "loss": 0.00989781618118286
+    },
+    {
+      "epoch": 37,
+      "loss": 0.008822781918570399
+    },
+    {
+      "epoch": 38,
+      "loss": 0.008992139901965856
+    },
+    {
+      "epoch": 39,
+      "loss": 0.008520045108161867
+    },
+    {
+      "epoch": 40,
+      "loss": 0.007025431236252188
+    }
+  ],
+  "metrics": {
+    "exact_match_accuracy": 0.8266666666666667,
+    "jaccard_similarity": 0.9133333333333333,
+    "llm_judge_accuracy": 0.8266666666666667,
+    "llm_judge_backend": "rule_based",
+    "num_examples": 75,
+    "num_judged": 75,
+    "per_example_sample": [
+      {
+        "query": "Calculate 246 percent of 53 -- also, search the web for current the Q3 roadmap pricing.",
+        "predicted": [
+          "web_search"
+        ],
+        "reference": [
+          "calculator",
+          "web_search"
+        ],
+        "judge": {
+          "correct": false,
+          "rationale": "predicted ['web_search'] != reference ['calculator', 'web_search']"
+        }
+      },
+      {
+        "query": "How many failed deployments did we have last month. Separately, find recent articles about the onboarding process.",
+        "predicted": [
+          "sql_query"
+        ],
+        "reference": [
+          "sql_query",
+          "web_search"
+        ],
+        "judge": {
+          "correct": false,
+          "rationale": "predicted ['sql_query'] != reference ['sql_query', 'web_search']"
+        }
+      },
+      {
+        "query": "Condense this into three bullet points -- also, divide 112 by 367.",
+        "predicted": [
+          "summarizer"
+        ],
+        "reference": [
+          "calculator",
+          "summarizer"
+        ],
+        "judge": {
+          "correct": false,
+          "rationale": "predicted ['summarizer'] != reference ['calculator', 'summarizer']"
+        }
+      },
+      {
+        "query": "Compute 149 + 392. Separately, condense this into three bullet points.",
+        "predicted": [
+          "calculator"
+        ],
+        "reference": [
+          "calculator",
+          "summarizer"
+        ],
+        "judge": {
+          "correct": false,
+          "rationale": "predicted ['calculator'] != reference ['calculator', 'summarizer']"
+        }
+      },
+      {
+        "query": "Condense this into three bullet points?",
+        "predicted": [
+          "summarizer"
+        ],
+        "reference": [
+          "summarizer"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Search the web for current kubernetes autoscaling pricing?",
+        "predicted": [
+          "web_search"
+        ],
+        "reference": [
+          "web_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "What's the latest news on the q3 roadmap?",
+        "predicted": [
+          "web_search"
+        ],
+        "reference": [
+          "web_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Run this snippet and tell me the output?",
+        "predicted": [
+          "code_exec"
+        ],
+        "reference": [
+          "code_exec"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Pull the count of active users from the database?",
+        "predicted": [
+          "sql_query"
+        ],
+        "reference": [
+          "sql_query"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Find recent articles about the onboarding process, then find the documentation on the Q3 roadmap.",
+        "predicted": [
+          "web_search",
+          "doc_search"
+        ],
+        "reference": [
+          "doc_search",
+          "web_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Execute the script and show the result?",
+        "predicted": [
+          "code_exec"
+        ],
+        "reference": [
+          "code_exec"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Look up the internal wiki page about api rate limits?",
+        "predicted": [
+          "doc_search"
+        ],
+        "reference": [
+          "doc_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Pull the count of new signups from the database?",
+        "predicted": [
+          "sql_query"
+        ],
+        "reference": [
+          "sql_query"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Look up the internal wiki page about the q3 roadmap?",
+        "predicted": [
+          "doc_search"
+        ],
+        "reference": [
+          "doc_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Find the documentation on api rate limits -- also, what was the total failed deployments this quarter.",
+        "predicted": [
+          "sql_query",
+          "doc_search"
+        ],
+        "reference": [
+          "doc_search",
+          "sql_query"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Find the documentation on kubernetes autoscaling?",
+        "predicted": [
+          "doc_search"
+        ],
+        "reference": [
+          "doc_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Run this snippet and tell me the output. Separately, look up today's GDPR compliance headlines.",
+        "predicted": [
+          "web_search",
+          "code_exec"
+        ],
+        "reference": [
+          "code_exec",
+          "web_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "What do our docs say about api rate limits. Separately, debug why this function throws an error.",
+        "predicted": [
+          "doc_search",
+          "code_exec"
+        ],
+        "reference": [
+          "code_exec",
+          "doc_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "How many refund requests did we have last month?",
+        "predicted": [
+          "sql_query"
+        ],
+        "reference": [
+          "sql_query"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      },
+      {
+        "query": "Search the web for current vendor contracts pricing?",
+        "predicted": [
+          "web_search"
+        ],
+        "reference": [
+          "web_search"
+        ],
+        "judge": {
+          "correct": true,
+          "rationale": "exact tool-set match"
+        }
+      }
+    ]
+  }
+}

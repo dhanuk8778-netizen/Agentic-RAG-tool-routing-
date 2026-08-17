@@ -1,0 +1,42 @@
+seed: 123
+
+lm_data:
+  num_docs: 500
+
+target_model:
+  dim: 96
+  num_layers: 3
+  num_heads: 4
+  ff_dim: 256
+  max_len: 1200
+  dropout: 0.1
+
+draft_model:
+  dim: 32
+  num_layers: 1
+  num_heads: 2
+  ff_dim: 64
+  max_len: 1200
+  dropout: 0.1
+
+train:
+  target_steps: 900
+  draft_steps: 500
+  block_size: 64
+  batch_size: 16
+  lr: 3.0e-4
+
+kv_cache_benchmark:
+  system_prompt: "You are a helpful internal assistant for an engineering team. Answer concisely and cite the relevant policy or system when applicable. Always double check numeric claims before stating them as fact."
+  num_turns: 8
+  new_tokens_per_turn: 40
+  num_conversations: 12
+
+speculative_decoding:
+  gamma: 4
+  max_new_tokens: 120
+  num_prompts: 15
+
+output:
+  dir: checkpoints
+  results_dir: results

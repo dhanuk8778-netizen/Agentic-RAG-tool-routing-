@@ -1,0 +1,154 @@
+{
+  "config": {
+    "seed": 42,
+    "data": {
+      "num_docs": 800,
+      "num_train_queries": 600,
+      "num_eval_queries": 150
+    },
+    "tokenizer": {
+      "vocab_size": 4000,
+      "max_len": 48
+    },
+    "bi_encoder": {
+      "model": {
+        "dim": 48,
+        "num_layers": 2,
+        "num_heads": 4,
+        "ff_dim": 128,
+        "max_len": 48,
+        "proj_dim": 32
+      },
+      "epochs": 15,
+      "batch_size": 32,
+      "lr": 0.0005
+    },
+    "cross_encoder": {
+      "model": {
+        "dim": 48,
+        "num_layers": 2,
+        "num_heads": 4,
+        "ff_dim": 128,
+        "max_len": 72
+      },
+      "epochs": 4,
+      "batch_size": 32,
+      "lr": 0.0005,
+      "num_hard_negatives": 4,
+      "weight_decay": 0.05
+    },
+    "hybrid_alpha": 0.5,
+    "output": {
+      "dir": "checkpoints",
+      "results_dir": "results"
+    }
+  },
+  "results": {
+    "bm25_only": {
+      "P@5": 0.4613333333333334,
+      "Recall@5": 0.11780037136352926,
+      "MRR": 0.5402777777777779,
+      "num_queries": 150
+    },
+    "dense_only": {
+      "P@5": 0.592,
+      "Recall@5": 0.15143689598466822,
+      "MRR": 0.7963042328042328,
+      "num_queries": 150
+    },
+    "hybrid": {
+      "P@5": 0.636,
+      "Recall@5": 0.16349479896371807,
+      "MRR": 0.7241005291005291,
+      "num_queries": 150
+    },
+    "hybrid_reranked": {
+      "P@5": 0.36533333333333334,
+      "Recall@5": 0.09045378586131715,
+      "MRR": 0.5732063492063492,
+      "num_queries": 150
+    }
+  },
+  "bi_encoder_history": [
+    {
+      "epoch": 1,
+      "loss": 3.4696778284536824
+    },
+    {
+      "epoch": 2,
+      "loss": 3.340616110208872
+    },
+    {
+      "epoch": 3,
+      "loss": 3.0349450755763696
+    },
+    {
+      "epoch": 4,
+      "loss": 2.5878562927246094
+    },
+    {
+      "epoch": 5,
+      "loss": 2.169386122677777
+    },
+    {
+      "epoch": 6,
+      "loss": 1.7744005564096812
+    },
+    {
+      "epoch": 7,
+      "loss": 1.4790594287820764
+    },
+    {
+      "epoch": 8,
+      "loss": 1.3205074104102883
+    },
+    {
+      "epoch": 9,
+      "loss": 1.1571544940407212
+    },
+    {
+      "epoch": 10,
+      "loss": 1.0087854926650588
+    },
+    {
+      "epoch": 11,
+      "loss": 0.9770228202278549
+    },
+    {
+      "epoch": 12,
+      "loss": 0.8951983451843262
+    },
+    {
+      "epoch": 13,
+      "loss": 0.8757844116236713
+    },
+    {
+      "epoch": 14,
+      "loss": 0.8486191324285559
+    },
+    {
+      "epoch": 15,
+      "loss": 0.8135308816626265
+    }
+  ],
+  "cross_encoder_history": [
+    {
+      "epoch": 1,
+      "loss": 0.6374694478831121
+    },
+    {
+      "epoch": 2,
+      "loss": 0.6021871878100293
+    },
+    {
+      "epoch": 3,
+      "loss": 0.48442565676357063
+    },
+    {
+      "epoch": 4,
+      "loss": 0.3954704563532557
+    }
+  ],
+  "num_documents": 800,
+  "num_eval_queries": 150
+}

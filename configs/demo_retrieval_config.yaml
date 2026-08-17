@@ -1,0 +1,24 @@
+seed: 42
+data:
+  num_docs: 800
+  num_train_queries: 600
+  num_eval_queries: 150
+tokenizer:
+  vocab_size: 4000
+  max_len: 48
+bi_encoder:
+  model: {dim: 48, num_layers: 2, num_heads: 4, ff_dim: 128, max_len: 48, proj_dim: 32}
+  epochs: 15
+  batch_size: 32
+  lr: 5.0e-4
+cross_encoder:
+  model: {dim: 48, num_layers: 2, num_heads: 4, ff_dim: 128, max_len: 72}
+  epochs: 4
+  batch_size: 32
+  lr: 5.0e-4
+  num_hard_negatives: 4
+  weight_decay: 0.05
+hybrid_alpha: 0.5
+output:
+  dir: checkpoints
+  results_dir: results

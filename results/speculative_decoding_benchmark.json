@@ -1,0 +1,9 @@
+{
+  "num_prompts": 15,
+  "mismatches": 0,
+  "mean_baseline_latency_s": 0.14300277140002132,
+  "mean_speculative_latency_s": 0.46525452860002287,
+  "speedup_x": 0.30736459853561177,
+  "mean_acceptance_rate": 0.09971688865476404,
+  "gamma": 4
+}

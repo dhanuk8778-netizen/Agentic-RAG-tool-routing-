@@ -1,0 +1,227 @@
+{
+  "completion_rate": 0.8266666666666667,
+  "routing_accuracy": 0.8266666666666667,
+  "retrieval_ok_rate": 1.0,
+  "num_turns": 75,
+  "turns_sample": [
+    {
+      "query": "Calculate 246 percent of 53 -- also, search the web for current the Q3 roadmap pricing.",
+      "predicted_tools": [
+        "web_search"
+      ],
+      "reference_tools": [
+        "calculator",
+        "web_search"
+      ],
+      "routing_correct": false,
+      "retrieval_ok": true,
+      "completed": false,
+      "retrieved_preview": null
+    },
+    {
+      "query": "How many failed deployments did we have last month. Separately, find recent articles about the onboarding process.",
+      "predicted_tools": [
+        "sql_query"
+      ],
+      "reference_tools": [
+        "sql_query",
+        "web_search"
+      ],
+      "routing_correct": false,
+      "retrieval_ok": true,
+      "completed": false,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Condense this into three bullet points -- also, divide 112 by 367.",
+      "predicted_tools": [
+        "summarizer"
+      ],
+      "reference_tools": [
+        "calculator",
+        "summarizer"
+      ],
+      "routing_correct": false,
+      "retrieval_ok": true,
+      "completed": false,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Compute 149 + 392. Separately, condense this into three bullet points.",
+      "predicted_tools": [
+        "calculator"
+      ],
+      "reference_tools": [
+        "calculator",
+        "summarizer"
+      ],
+      "routing_correct": false,
+      "retrieval_ok": true,
+      "completed": false,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Condense this into three bullet points?",
+      "predicted_tools": [
+        "summarizer"
+      ],
+      "reference_tools": [
+        "summarizer"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Search the web for current kubernetes autoscaling pricing?",
+      "predicted_tools": [
+        "web_search"
+      ],
+      "reference_tools": [
+        "web_search"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "What's the latest news on the q3 roadmap?",
+      "predicted_tools": [
+        "web_search"
+      ],
+      "reference_tools": [
+        "web_search"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Run this snippet and tell me the output?",
+      "predicted_tools": [
+        "code_exec"
+      ],
+      "reference_tools": [
+        "code_exec"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Pull the count of active users from the database?",
+      "predicted_tools": [
+        "sql_query"
+      ],
+      "reference_tools": [
+        "sql_query"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Find recent articles about the onboarding process, then find the documentation on the Q3 roadmap.",
+      "predicted_tools": [
+        "web_search",
+        "doc_search"
+      ],
+      "reference_tools": [
+        "doc_search",
+        "web_search"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": [
+        "doc_00570",
+        "doc_00012",
+        "doc_00222"
+      ]
+    },
+    {
+      "query": "Execute the script and show the result?",
+      "predicted_tools": [
+        "code_exec"
+      ],
+      "reference_tools": [
+        "code_exec"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Look up the internal wiki page about api rate limits?",
+      "predicted_tools": [
+        "doc_search"
+      ],
+      "reference_tools": [
+        "doc_search"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": [
+        "doc_00797",
+        "doc_00753",
+        "doc_00229"
+      ]
+    },
+    {
+      "query": "Pull the count of new signups from the database?",
+      "predicted_tools": [
+        "sql_query"
+      ],
+      "reference_tools": [
+        "sql_query"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": null
+    },
+    {
+      "query": "Look up the internal wiki page about the q3 roadmap?",
+      "predicted_tools": [
+        "doc_search"
+      ],
+      "reference_tools": [
+        "doc_search"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": [
+        "doc_00753",
+        "doc_00570",
+        "doc_00705"
+      ]
+    },
+    {
+      "query": "Find the documentation on api rate limits -- also, what was the total failed deployments this quarter.",
+      "predicted_tools": [
+        "sql_query",
+        "doc_search"
+      ],
+      "reference_tools": [
+        "doc_search",
+        "sql_query"
+      ],
+      "routing_correct": true,
+      "retrieval_ok": true,
+      "completed": true,
+      "retrieved_preview": [
+        "doc_00629",
+        "doc_00477",
+        "doc_00389"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "zero_shot": {
+    "exact_match_accuracy": 0.48,
+    "jaccard_similarity": 0.5644444444444445
+  },
+  "full_finetune": {
+    "exact_match_accuracy": 0.84,
+    "jaccard_similarity": 0.9111111111111111,
+    "trainable_params": 87430,
+    "total_params": 87430
+  },
+  "qlora": {
+    "exact_match_accuracy": 0.8266666666666667,
+    "jaccard_similarity": 0.9022222222222221,
+    "trainable_params": 7728,
+    "total_params": 57910,
+    "num_bits": 4,
+    "lora_r": 8
+  },
+  "quantization_error": {
+    "8": {
+      "num_bits": 8,
+      "mse": 2.6861783908316283e-07,
+      "relative_l2_error": 0.004254233092069626,
+      "compression_ratio": 4.0
+    },
+    "4": {
+      "num_bits": 4,
+      "mse": 7.449895929312333e-05,
+      "relative_l2_error": 0.07084821909666061,
+      "compression_ratio": 8.0
+    }
+  }
+}
